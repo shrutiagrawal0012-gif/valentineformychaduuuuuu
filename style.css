@@ -1,0 +1,172 @@
+/* Main styles: Colors, layout, responsiveness */
+/* EDIT: Change colors here for custom themes */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Clean font */
+    background: linear-gradient(45deg, #ff69b4, #ff1493, #dda0dd); /* Pink to red to purple gradient */
+    background-size: 400% 400%;
+    animation: gradient-shift 5s ease infinite; /* Animated gradient */
+    color: #fff;
+    overflow-x: hidden;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="%23ff69b4"/></svg>'), auto; /* Heart cursor */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive; /* Romantic handwritten font */
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Envelope styles */
+.envelope {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #ff69b4;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+}
+
+.letter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 160px;
+    height: 110px;
+    background: #f8f8f8;
+    padding: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    color: #333;
+    display: none; /* Hidden until envelope opens */
+    border-radius: 5px;
+}
+
+/* Buttons */
+.btn {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: #fff;
+}
+
+.no-btn {
+    background: linear-gradient(45deg, #ffa500, #ff4500);
+    color: #fff;
+}
+
+/* QR Section */
+.qr-section {
+    margin-top: 20px;
+}
+
+#qrcode {
+    margin: 10px auto;
+}
+
+/* Sound toggle */
+.sound-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Page-specific styles */
+.yes-page .girl-character {
+    font-size: 5rem;
+    color: #ff69b4;
+    animation: blush 2s infinite;
+}
+
+.no-page .girl-character {
+    font-size: 5rem;
+    color: #ff4500;
+    animation: punch 1s infinite;
+}
+
+.speech-bubble {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    .envelope {
+        width: 150px;
+        height: 112px;
+    }
+    .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}

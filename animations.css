@@ -1,0 +1,128 @@
+/* All animations: Keyframes and classes */
+/* Floating hearts */
+@keyframes float-hearts {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.floating-hearts::before {
+    content: '❤️';
+    position: absolute;
+    font-size: 2rem;
+    animation: float-hearts 5s linear infinite;
+    top: 0;
+    left: 10%;
+}
+
+.floating-hearts::after {
+    content: '💖';
+    position: absolute;
+    font-size: 1.5rem;
+    animation: float-hearts 7s linear infinite;
+    top: 0;
+    left: 70%;
+}
+
+/* Falling flowers */
+@keyframes fall-flowers {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.falling-flowers::before {
+    content: '🌹';
+    position: absolute;
+    font-size: 2rem;
+    animation: fall-flowers 6s linear infinite;
+    top: 0;
+    left: 50%;
+}
+
+/* Gradient shift */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Envelope bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.envelope {
+    animation: bounce 2s infinite;
+}
+
+/* Letter slide */
+@keyframes slide-out {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Button hover effects */
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.yes-btn:hover {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.no-btn:hover {
+    animation: wiggle 0.5s ease-in-out;
+    transform: translateX(50px); /* Moves away playfully */
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+/* Exploding hearts for YES page */
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.exploding-hearts::before {
+    content: '💥❤️';
+    position: absolute;
+    font-size: 3rem;
+    animation: explode 2s infinite;
+    top: 50%;
+    left: 50%;
+}
+
+/* Angry effects for NO page */
+@keyframes punch {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.punch {
+    animation: punch 0.5s infinite;
+}
+
+/* Blush for YES girl */
+@keyframes blush {
+    0%, 100% { color: #ff69b4; }
+    50% { color: #ff1493; }
+}
+
+/* Heart burst on click */
+@keyframes burst {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+.heart-burst {
+    position: absolute;
+    font-size: 2rem;
+    animation: burst 1s ease-out;
+    pointer-events: none;
+}
